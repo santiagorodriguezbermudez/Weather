@@ -15,9 +15,10 @@
       <div class="weather-stats shadow-lg bg-white rounded p-3 flex-grow-0">
         <div class="main-stats text-left m-4">
           <div class="flex justify-around items-center">
-            <h2 class='text-6xl'>18C</h2>
-            <img class='' src='http://openweathermap.org/img/wn/10d@4x.png' width="160px"></img>
+            <h2 id='temp' class='text-4xl'></h2>
+            <img id='icon' width="160px"></img>
           </div>
+          <p class='text-center' id='city'></p>
           <p class='text-center'>Moderate Rain</p>
         </div>
         <hr>
@@ -39,12 +40,8 @@
           <div id="wind" class='my-4'>
               <img  class='inline-block m-4' src="../src/assets/images/wind.svg" alt="wind" width="50px">
               <ul class='list-reset inline-block align-middle '>
-                <li>Speed: <span>19</span><span>m/s</span></li>
-                <li>Type: <span>Very good wind</span></li>
+                <li>Speed: <span>19</span><span> m/s</span></li>
               </ul>
-          </div>
-          <div id="time" class='m-4'>
-              <p class='text-left'>Last Update: <span>Tuesday, Sept 9, 2020 at 4:00pm</span></p>
           </div>
         </div>
       </div>

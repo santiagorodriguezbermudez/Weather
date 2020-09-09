@@ -13,14 +13,11 @@ const ApiModule = (() => {
         const weatherObj = WeatherObject(
           res.name,
           res.sys.country,
-          res.weather[0].description,
+          res.weather,
           res.wind.speed,
-          res.main.humidity,
-          res.main.temp,
-          res.main.feels_like,
-          res.main.temp_max,
-          res.main.temp_min,
-          res.weather[0].icon,
+          res.main,
+          res.sys.sunrise,
+          res.sys.sunset,
         );
         resolve(weatherObj);
       } else {

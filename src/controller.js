@@ -14,7 +14,7 @@ const Controller = (() => {
 
   const startWeatherApp = () => {
     WeatherAPI.getCurrentWeather('bogota').then((response) => {
-      console.log(response);
+      View.printApi(response);
     });
   };
 
