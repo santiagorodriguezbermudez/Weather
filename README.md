@@ -32,5 +32,6 @@ Contributions, issues, and feature requests are welcome!
 
 ## 📝 License
 
-Illustrations by Katerina Limpitsouni from [unDraw](https://undraw.co/)
+Illustrations by Katerina Limpitsouni from [unDraw](https://undraw.co/)<br>
+Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a><br>
 This project is [MIT](LICENSE) licensed.
