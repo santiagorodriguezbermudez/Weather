@@ -1,12 +1,25 @@
 
 const View = (() => {
-  const printApi = (message) => {
-    const body = document.getElementById('main');
-    const apiResult = document.createElement('p');
+  const printApi = (weatherObj) => {
+    
+  };
+
+  const error = (msg) => {
+    alert(msg);
+  };
+
+  const toogleAnimation = () => {
+    document.getElementById('city-input').classList.toggle('input-animation');
+    document.getElementById('submit-check').classList.toggle('input-animation');
+    document.getElementById('city-input').classList.toggle('hidden');
+    document.getElementById('submit-check').classList.toggle('hidden');
+    document.getElementById('check-city').classList.toggle('hidden');
   };
 
   return {
     printApi,
+    error,
+    toogleAnimation,
   };
 })();
 

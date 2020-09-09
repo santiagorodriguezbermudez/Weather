@@ -2,7 +2,6 @@ import WeatherAPI from './weatherApi';
 import View from './view';
 
 const Controller = (() => {
-
   const switchtoFarenheit = (current) => {
     const f = Math.round((current * (9 / 15)) + 32);
     View.displayTemperature(`${f}°F`);
@@ -15,19 +14,32 @@ const Controller = (() => {
 
   const startWeatherApp = () => {
     WeatherAPI.getCurrentWeather('bogota').then((response) => {
-      View.printApi(response);
+      console.log(response);
     });
   };
 
-  const listenToUserInput = () => {
+  const toogleAnimation = () => {
+    View.toogleAnimation();
+  };
 
+  const getData = () => {
+    const city = document.getElementById('city-input').value.trim();
+    if (city === '') {
+      View.error('Error: Please enter a valid city');
+    } else {
+      toogleAnimation();
+      WeatherAPI.getCurrentWeather(city).then((response) => {
+        View.printApi(response);
+      });
+    }
   };
 
   return {
     startWeatherApp,
-    listenToUserInput,
     switchtoFarenheit,
     switchtoCelsius,
+    getData,
+    toogleAnimation,
   };
 })();
 

@@ -22,7 +22,6 @@ const ApiModule = (() => {
           res.main.temp_min,
           res.weather[0].icon,
         );
-        console.log(weatherObj);
         resolve(weatherObj);
       } else {
         reject();
