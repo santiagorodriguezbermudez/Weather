@@ -8,6 +8,25 @@
   max-width: 1440px;
 }
 
+.input-animation {
+  opacity: 1;
+  pointer-events: initial;
+  animation: appear 1s ease-in-out 0s;
+}
+
+@keyframes appear {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+    pointer-events: visible;
+  }
+}
+
 .weather-image {
   width: 100%;
   height: 86.5%;

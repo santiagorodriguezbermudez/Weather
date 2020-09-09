@@ -22,9 +22,6 @@
         </div>
         <hr>
         <div class="secondary-stats text-left">
-          <div id="main-weather" class='m-4'>
-            <p class='text-left'>Rain</p>
-          </div>
           <div id="sunset" class='m-4'>
             <p class='text-blue-500'>
               <img class='inline-block' src="../src/assets/images/sunrise.svg" alt="sunrise" width="50px">6:00am 
@@ -54,8 +51,9 @@
   
       <div class="weather-commands flex-grow">
           <div id="form" class='ml-5 p-5'>
-            <input class='p-1 border border-blue-500 rounded shadow hidden' type="text" placeholder="Type here your city">
-            <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Check City</button>
+            <input class='p-1 border border-blue-500 rounded shadow hidden' type="text" id='city-input' placeholder="Type your city">
+            <button class='bg-green-400 hover:bg-gren-700 text-white font-bold py-2 px-4 rounded hidden' id='submit-check' onclick="getCity()">Submit City</button>
+            <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' id='check-city' onclick="displaySearch()">Check City</button>
           </div>
           <div class="weather-image snow"></div>
       </div>
