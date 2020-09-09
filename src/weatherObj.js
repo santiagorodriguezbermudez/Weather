@@ -1,14 +1,11 @@
-const Weather = ((city, country, expected, wind, humidity, temp, feelt, maxt, lowt, icon) => (
+const Weather = ((city, country, weather, wind, main, sunrise, sunset) => (
   {
     city,
     country,
-    expected,
+    weather,
     wind,
-    humidity,
-    temp,
-    feelt,
-    maxt,
-    lowt,
-    icon,
+    main,
+    sunrise,
+    sunset,
   }));
 export default Weather;
