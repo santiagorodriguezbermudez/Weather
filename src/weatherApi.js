@@ -18,6 +18,7 @@ const ApiModule = (() => {
           res.main,
           res.sys.sunrise,
           res.sys.sunset,
+          res.timezone,
         );
         resolve(weatherObj);
       } else {

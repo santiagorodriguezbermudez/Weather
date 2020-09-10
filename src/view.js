@@ -1,6 +1,5 @@
 
 const View = (() => {
-
   const removeAllChildNodes = (parent) => {
     while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
@@ -8,14 +7,17 @@ const View = (() => {
   };
 
   const printApi = (weatherObj) => {
-    let fullDateSunrise = new Date(weatherObj.sunrise * 1000);
-    let fullDateSunset = new Date(weatherObj.sunset * 1000);
+    console.log(weatherObj.timezone);
+    let fullDateSunrise = new Date((weatherObj.sunrise + weatherObj.timezone) * 1000);
+    let fullDateSunset = new Date((weatherObj.sunset + weatherObj.timezone) * 1000);
     const tempFeel = `${weatherObj.main.feels_like} °C`;
     const tempMax = `${weatherObj.main.temp_max} °C`;
     const tempMin = `${weatherObj.main.temp_min} °C`;
 
-    fullDateSunrise = fullDateSunrise.toString().slice(0, 21);
-    fullDateSunset = fullDateSunset.toString().slice(0, 21);
+    fullDateSunrise = fullDateSunrise.toUTCString();
+    fullDateSunset = fullDateSunset.toUTCString();
+    fullDateSunrise = fullDateSunrise.toString().slice(0, 22);
+    fullDateSunset = fullDateSunset.toString().slice(0, 22);
 
     document.getElementById('city').innerHTML = weatherObj.city;
     document.getElementById('temp').innerHTML = `${weatherObj.main.temp} °C`;
