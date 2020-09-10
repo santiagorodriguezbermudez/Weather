@@ -23,6 +23,13 @@ const View = (() => {
     document.getElementById('wind').innerHTML = weatherObj.wind;
   };
 
+  const printImage = (url) => {
+    const image = document.createElement('img');
+    image.src = url;
+    image.className += 'image';
+    document.getElementById('image').append(image);
+  };
+
   const error = (msg) => {
     alert(msg);
   };
@@ -39,6 +46,7 @@ const View = (() => {
     printApi,
     error,
     toogleAnimation,
+    printImage,
   };
 })();
 

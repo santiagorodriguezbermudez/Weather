@@ -1,5 +1,6 @@
 import WeatherAPI from './weatherApi';
 import View from './view';
+import ImageAPI from './imageApi';
 
 const Controller = (() => {
   const switchtoFarenheit = (current) => {
@@ -15,6 +16,9 @@ const Controller = (() => {
   const startWeatherApp = () => {
     WeatherAPI.getCurrentWeather('bogota').then((response) => {
       View.printApi(response);
+      ImageAPI.getImage(response.weather).then((response) => {
+        View.printImage(response);
+      });
     });
   };
 
