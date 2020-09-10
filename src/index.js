@@ -11,3 +11,11 @@ window.displaySearch = () => {
 window.getCity = () => {
   Controller.getData();
 };
+
+window.switchToImperial = () => {
+  Controller.switchtoFarenheit();
+};
+
+window.switchToMetric = () => {
+  Controller.switchtoCelsius();
+};

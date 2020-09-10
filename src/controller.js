@@ -3,14 +3,23 @@ import View from './view';
 import ImageAPI from './imageApi';
 
 const Controller = (() => {
-  const switchtoFarenheit = (current) => {
-    const f = Math.round((current * (9 / 15)) + 32);
-    View.displayTemperature(`${f}°F`);
+  const switchtoFarenheit = () => {
+    const imperial = document.getElementById('imperial');
+    if (imperial.className.includes('red')) {
+      View.toogleUnitButton();
+      const functionConvert = (c) => ((c * (9 / 5)) + 32).toPrecision(4);
+      View.changeTempUnit(functionConvert, '   °F');
+    }
   };
 
-  const switchtoCelsius = (current) => {
-    const c = Math.round((current - 32) * (5 / 9));
-    View.displayTemperature(`${c}°C`);
+  const switchtoCelsius = () => {
+    const metric = document.getElementById('metric');
+
+    if (metric.className.includes('red')) {
+      View.toogleUnitButton();
+      const functionConvert = (f) => ((f - 32) * (5 / 9)).toPrecision(4);
+      View.changeTempUnit(functionConvert, '   °C');
+    }
   };
 
   const callApi = (city) => {
