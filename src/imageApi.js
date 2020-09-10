@@ -4,7 +4,8 @@ const ApiImage = (() => {
 
   const getImage = (weatherObj) => new Promise((resolve, reject) => {
     const weather = weatherObj.weather[0].main;
-    fetch(`${url}sky,${weather}`,
+    const cityName = weatherObj.city;
+    fetch(`${url}sky,${weather},${cityName}`,
       {
         mode: 'cors',
       }).then((res) => {

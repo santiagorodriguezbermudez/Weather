@@ -9,7 +9,7 @@ const ApiModule = (() => {
       {
         mode: 'cors',
       }).then(res => res.json()).then((res) => {
-      if (res) {
+      if (res.cod === 200) {
         const weatherObj = WeatherObject(
           res.name,
           res.sys.country,

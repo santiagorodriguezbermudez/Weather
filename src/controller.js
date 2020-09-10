@@ -19,6 +19,8 @@ const Controller = (() => {
       ImageAPI.getImage(response).then((responseImage) => {
         View.printImage(responseImage);
       });
+    }).catch(() => {
+      View.error('Location not found!');
     });
   };
 
