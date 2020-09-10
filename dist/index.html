@@ -1,10 +1,64 @@
 <!doctype html>
 <html>
   <head>
-    <title>Getting Started</title>
+    <title>Weather app</title>
     <script src="https://unpkg.com/lodash@4.16.6"></script>
+    <link rel="icon" href="../src/assets/images/sun.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/assets/css/style.css">
+    <script src="main.js" type="module"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
   </head>
-  <body>
-    <script src="../src/index.js"></script>
+  <body id='main' class='container mx-auto'>
+    <section class="main-section flex justify-start">
+      <div class="weather-stats shadow-lg bg-white rounded p-3 flex-grow-0">
+        <div class="main-stats text-left m-4">
+          <div class="flex justify-around items-center">
+            <h2 id='temp' class='text-4xl'></h2>
+            <img id='icon' width="160px"></img>
+          </div>
+          <p class='text-center' id='city'></p>
+          <p class='text-center' id='weather'></p>
+        </div>
+        <hr>
+        <div class="secondary-stats text-left">
+          <div class='m-4'>
+            <p class='text-blue-500'>
+              <img class='inline-block' src="../src/assets/images/sunrise.svg" alt="sunrise" width="50px"><span class= 'ml-3' id='sunrise'></span><br>
+              <img class='inline-block' src="../src/assets/images/afternoon.svg" alt="sunset" width="50px"><span class= 'ml-3' id='sunset'></span>
+            </p>
+          </div>
+          <div id="temperature" class='my-4'>
+            <img  class='inline-block m-4' src="../src/assets/images/temperature.svg" alt="temperature" width="50px">
+            <ul class='list-reset inline-block align-middle '>
+              <li>Feel's like: <span id='temp-feel'></span></li>
+              <li>Maximum: <span id='temp-max'></span></li>
+              <li>Minimum: <span id='temp-min'></span></li>
+            </ul>
+          </div>
+          <div class='my-4'>
+              <img  class='inline-block m-4' src="../src/assets/images/wind.svg" alt="wind" width="50px">
+              <ul class='list-reset inline-block align-middle '>
+                <li>Speed: <span id='wind'></span> m/s</li>
+              </ul>
+          </div>
+        </div>
+        <hr>
+        <div class="w-full flex justify-center items-center p-8">
+            <button class="red-btn" id="imperial" onclick="switchToImperial()">°F</button>
+            <button class="green-btn" id="metric" onclick="switchToMetric()">°C</button>
+        </div>
+      </div>
+  
+      <div class="weather-commands flex-grow">
+          <div id="form" class='ml-5 p-3'>
+            <input class='p-1 border border-blue-500 rounded shadow hidden' type="text" id='city-input' placeholder="Type your city">
+            <button class='bg-green-400 hover:bg-gren-700 text-white font-bold py-2 px-4 rounded hidden' id='submit-check' onclick="getCity()">Submit City</button>
+            <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' id='check-city' onclick="displaySearch()">Check City</button>
+          </div>
+          <div id='image' class="weather-image"></div>
+      </div>
+    </section>
   </body>
 </html>

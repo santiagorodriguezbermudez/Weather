@@ -1,10 +1,21 @@
-function component() {
-  const element = document.createElement('div');
+import Controller from './controller';
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+window.onload = () => {
+  Controller.startWeatherApp();
+};
 
-  return element;
-}
+window.displaySearch = () => {
+  Controller.toogleAnimation();
+};
 
-document.body.appendChild(component());
+window.getCity = () => {
+  Controller.getData();
+};
+
+window.switchToImperial = () => {
+  Controller.switchtoFarenheit();
+};
+
+window.switchToMetric = () => {
+  Controller.switchtoCelsius();
+};
