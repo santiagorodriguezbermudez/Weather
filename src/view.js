@@ -38,6 +38,8 @@ const View = (() => {
     document.getElementById('temp-max').innerHTML = tempMax;
     document.getElementById('temp-min').innerHTML = tempMin;
     document.getElementById('wind').innerHTML = weatherObj.wind;
+    document.getElementById('imperial').className = 'red-btn';
+    document.getElementById('metric').className = 'green-btn';
   };
 
   const printImage = (url) => {
