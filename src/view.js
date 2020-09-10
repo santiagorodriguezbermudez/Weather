@@ -20,6 +20,7 @@ const View = (() => {
     document.getElementById('temp-feel').innerHTML = tempFeel;
     document.getElementById('temp-max').innerHTML = tempMax;
     document.getElementById('temp-min').innerHTML = tempMin;
+    document.getElementById('wind').innerHTML = weatherObj.wind;
   };
 
   const error = (msg) => {
