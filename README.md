@@ -2,6 +2,8 @@
 
 Building a weather app to learn about asynchronous functions in JavaScript and connecting to third party APIs
 
+![screenshot](./src/assets/images/screenshot.png))
+
 ## Built With
 
 -   HTML5
@@ -11,7 +13,7 @@ Building a weather app to learn about asynchronous functions in JavaScript and c
 
 ## Live Demo
 
-[Work in Progress]()
+[Live Demo](https://rawcdn.githack.com/santiagorodriguezbermudez/weather/69a05cba69bbadab634d603c05b450f54afcc7c1/dist/index.html)
 
 ## Getting Started
 
