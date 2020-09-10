@@ -8,6 +8,13 @@ const View = (() => {
     unit.innerHTML = '°C';
     document.getElementById('temp').append(unit);
     document.getElementById('icon').src = `http://openweathermap.org/img/wn/${weatherObj.weather[0].icon}@4x.png`;
+    document.getElementById('weather').innerHTML = `${weatherObj.weather[0].main} - ${weatherObj.weather[0].description}`;
+    let fullDateSunrise = new Date(weatherObj.sunrise * 1000);
+    fullDateSunrise = fullDateSunrise.toString().slice(0, 21);
+    document.getElementById('sunrise').innerHTML = fullDateSunrise;
+    let fullDateSunset = new Date(weatherObj.sunset * 1000);
+    fullDateSunset = fullDateSunset.toString().slice(0, 21);
+    document.getElementById('sunset').innerHTML = fullDateSunset;
   };
 
   const error = (msg) => {
