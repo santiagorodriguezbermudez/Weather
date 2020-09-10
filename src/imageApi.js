@@ -2,8 +2,9 @@
 const ApiImage = (() => {
   const url = 'https://source.unsplash.com/1600x900/?';
 
-  const getImage = (currentWeather) => new Promise((resolve, reject) => {
-    fetch(`${url}nature,sky,${currentWeather}`,
+  const getImage = (weatherObj) => new Promise((resolve, reject) => {
+    const weather = weatherObj.weather[0].main;
+    fetch(`${url}sky,${weather}`,
       {
         mode: 'cors',
       }).then((res) => {

@@ -1,7 +1,13 @@
 
 const View = (() => {
+
+  const removeAllChildNodes = (parent) => {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  };
+
   const printApi = (weatherObj) => {
-    console.log(weatherObj);
     let fullDateSunrise = new Date(weatherObj.sunrise * 1000);
     let fullDateSunset = new Date(weatherObj.sunset * 1000);
     const tempFeel = `${weatherObj.main.feels_like} °C`;
@@ -27,6 +33,7 @@ const View = (() => {
     const image = document.createElement('img');
     image.src = url;
     image.className += 'image';
+    removeAllChildNodes(document.getElementById('image'));
     document.getElementById('image').append(image);
   };
 

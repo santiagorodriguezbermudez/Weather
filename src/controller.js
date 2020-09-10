@@ -13,13 +13,17 @@ const Controller = (() => {
     View.displayTemperature(`${c}°C`);
   };
 
-  const startWeatherApp = () => {
-    WeatherAPI.getCurrentWeather('bogota').then((response) => {
+  const callApi = (city) => {
+    WeatherAPI.getCurrentWeather(city).then((response) => {
       View.printApi(response);
-      ImageAPI.getImage(response.weather).then((response) => {
-        View.printImage(response);
+      ImageAPI.getImage(response).then((responseImage) => {
+        View.printImage(responseImage);
       });
     });
+  };
+
+  const startWeatherApp = () => {
+    callApi('bogota');
   };
 
   const toogleAnimation = () => {
@@ -32,9 +36,7 @@ const Controller = (() => {
       View.error('Error: Please enter a valid city');
     } else {
       toogleAnimation();
-      WeatherAPI.getCurrentWeather(city).then((response) => {
-        View.printApi(response);
-      });
+      callApi(city);
     }
   };
 
